@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discoveryservice
+
+# 유레카는 등록하면 서버든 클라든 무조건 클라로 등록됨
+# 따라서 해당 유레카 서버는 클라로 등록하지 않기 위해 세팅
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

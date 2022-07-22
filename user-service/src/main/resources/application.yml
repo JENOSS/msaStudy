@@ -5,13 +5,25 @@ server:
 spring:
   application:
     name: user-service
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+      path: /h2-console
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+
+greeting:
+  message: Welcome to the Simple E-Commerce
 
 # eureka client 등록
 # instance-id : 랜덤 포트를 사용하면 eureka 웹에서 서비스가 여러개로 안 보여 따로 세팅해줘야됨
 # service-url : 유레카 서버 위치
 eureka:
   instance:
-    instance-id: ${spring.cloud.client.hostname} :${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.application.name} :${spring.application.instance_id:${random.value}}
   client:
     register-with-eureka: true
     fetch-registry: true

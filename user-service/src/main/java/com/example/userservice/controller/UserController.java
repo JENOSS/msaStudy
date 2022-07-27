@@ -72,7 +72,7 @@ public class UserController {
     public ResponseEntity<ResponseUser> getUser(@PathVariable("userId") String userId){
         UserDto userDto = userService.getUserByUserId(userId);
 
-        ResponseUser returnValue = new ModelMapper().map(userDto, ResponseUser.class);
+        ResponseUser returnValue = new ModelMapper() .map(userDto, ResponseUser.class);
 
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }

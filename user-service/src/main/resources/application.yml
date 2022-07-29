@@ -18,6 +18,16 @@ spring:
 greeting:
   message: Welcome to the Simple E-Commerce
 
+logging:
+  level:
+    com.example.userservice: DEBUG
+
+token:
+  expiration_time: 86400000
+  secret: user_token
+
+
+
 # eureka client 등록
 # instance-id : 랜덤 포트를 사용하면 eureka 웹에서 서비스가 여러개로 안 보여 따로 세팅해줘야됨
 # service-url : 유레카 서버 위치

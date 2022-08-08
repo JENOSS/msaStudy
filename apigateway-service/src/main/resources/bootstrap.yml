@@ -1,0 +1,10 @@
+#application.yml 보다 우선 순위가 높은 설정 파일
+#config 서버에서 application.yml 을 가져와야 되기 때문에 config server 와 연결
+
+spring:
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888
+      name: ecommerce
+  profiles:
+    active: dev

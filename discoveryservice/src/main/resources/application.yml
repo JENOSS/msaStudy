@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: discoveryservice
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888
+      name: ecommerce
 
 # 유레카는 등록하면 서버든 클라든 무조건 클라로 등록됨
 # 따라서 해당 유레카 서버는 클라로 등록하지 않기 위해 세팅
